@@ -7,14 +7,15 @@ namespace ConsoleApplication1
     {
         static void Main(string[] args)
         {
-            Hashtable hashtable=new Hashtable();
-            hashtable.Add("aa","abc");
+            Hashtable hashtable = new Hashtable();
+            hashtable.Add("aa", "abc");
 
             foreach (var key in hashtable.Keys)
             {
-                 Console.WriteLine(hashtable[key]);
+                Console.WriteLine(hashtable[key]);
+                Console.WriteLine("ts");
             }
-           
+
         }
     }
 }
