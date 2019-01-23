@@ -2,8 +2,8 @@
 using System.Collections.Generic;
 
 namespace Demo0005
-{
-    
+{    
+    // 静态成员变量初始化示例
     class Program
     {
         static void Main (string[] args)
