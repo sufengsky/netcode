@@ -41,3 +41,6 @@ Examples:
     dotnet new mvc --auth Individual
     dotnet new webapi 
     dotnet new --help
+
+命令行运行程序的方式是
+    dotnet run
