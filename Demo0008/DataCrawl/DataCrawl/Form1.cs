@@ -111,20 +111,75 @@ namespace DataCrawl
 
         private void doLogin()
         {
-            string pwd = "5937ffad5ecd5f6dd9a83b83895e480f";//xc123456 md5加密后的字符串
+            //string pwd = "5937ffad5ecd5f6dd9a83b83895e480f";//xc123456 md5加密后的字符串
+            string postdata = "loginname=%E6%AD%A6%E5%A4%B7%E5%B1%B1%E5%B8%82%E6%98%9F%E6%9D%91%E9%95%87&loginpwd=5937ffad5ecd5f6dd9a83b83895e480f&checkCode="+this.textBox1.Text;
             string loginUrl = "http://220.160.52.164:9085/super/super/Framework_doLogin.jspx";
+            HttpWebRequest request = (HttpWebRequest)WebRequest.Create(loginUrl);
+            request.Headers.Add(HttpRequestHeader.AcceptEncoding, "gzip,deflate");
+            request.Headers.Add(HttpRequestHeader.AcceptLanguage, "zh-CN,zh;q=0.9");
+            request.Accept = "text/html, */*; q=0.01";
+            request.KeepAlive = true;
+
+            request.UserAgent = "User-Agent Mozilla/5.0 (compatible; MSIE 9.0; Windows NT 6.1; WOW64; Trident/5.0)";
+            request.Method = "POST";
+            request.ContentType = "application/x-www-form-urlencoded; charset=UTF-8";
+            request.AllowAutoRedirect = true;
+            request.Credentials = CredentialCache.DefaultCredentials;
+            request.Host = "220.160.52.164:9085";
+            request.CookieContainer = cookies;
+
+            byte[] postdatabytes = Encoding.UTF8.GetBytes(postdata);
+            request.ContentLength = postdatabytes.Length;
+            Stream stream = request.GetRequestStream();
+            //设置POST 数据
+            stream.Write(postdatabytes, 0, postdatabytes.Length);
+            stream.Close();
+            HttpWebResponse response = (HttpWebResponse)request.GetResponse();
+            cookies = request.CookieContainer; //保存cookies
+            response.Close();
+            var cookiesstr = request.CookieContainer.GetCookieHeader(request.RequestUri); //把cookies转换成字符串
         }
 
         private void GetASingleInfo()
         {
             string url = "http://220.160.52.164:9085/fw/FwAction_toInfo.jspx?fw.id=BFC58877-B7CB-009A-E043-0A822906009A&mode=4&page=1&city1=350700&county1=350782&street1=350782003000&community1=350782003007&zgqk1=&pcjl1=&ydxz1=&lrfs1=&sfpkh1=undefined&sfygatb1=&jclx1=&sjqk1=&ywsgct1=&jglx1=&syyt1=&gzqk1=&gznr1=&fwlb1=&yy1=&timeq1=&timez1=&dqzt1=undefined&keywords1=";
             string srl = "http://220.160.52.164:9085/fw/FwAction_toInfo.jspx?fw.id=BFC3D75C-F13A-01DA-E043-0A82290601DA&mode=4&page=1&city1=350700&county1=350782&street1=350782003000&community1=350782003007&zgqk1=&pcjl1=&ydxz1=&lrfs1=&sfpkh1=undefined&sfygatb1=&jclx1=&sjqk1=&ywsgct1=&jglx1=&syyt1=&gzqk1=&gznr1=&fwlb1=&yy1=&timeq1=&timez1=&dqzt1=undefined&keywords1=";
+            HttpWebRequest request = (HttpWebRequest)WebRequest.Create(url);
+            request.Headers.Add(HttpRequestHeader.AcceptEncoding, "gzip");
+            request.Headers.Add(HttpRequestHeader.AcceptLanguage, "zh-CN");
+            request.Accept = "text/html, application/xhtml+xml,*/*";
+            request.KeepAlive = true;
+
+            request.UserAgent = "User-Agent Mozilla/5.0 (compatible; MSIE 9.0; Windows NT 6.1; WOW64; Trident/5.0)";
+            request.Method = "GET";
+            request.ContentType = "application/x-www-form-urlencoded";
+            request.AllowAutoRedirect = true;
+            request.Credentials = CredentialCache.DefaultCredentials;
+            request.Host = "220.160.52.164:9085";
+            request.CookieContainer = cookies; 
+            HttpWebResponse response = (HttpWebResponse)request.GetResponse();
+            Stream responseStream = null;
+            if (response.ContentEncoding.ToLower() == "gzip")
+            {
+                responseStream = new GZipStream(response.GetResponseStream(), CompressionMode.Decompress);
+            }
+            string result = "";
+            using (var sr = new StreamReader(responseStream, Encoding.UTF8))
+            {
+                 result=sr.ReadToEnd();
+            }
         }
 
         private void Form1_Load(object sender, EventArgs e)
         {
             GetCookie();
             doGetImg();
+        }
+
+        private void btnLogin_Click(object sender, EventArgs e)
+        {
+            doLogin();
+            GetASingleInfo();
         }
     }
 }
