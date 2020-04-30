@@ -1,4 +1,5 @@
-﻿using System;
+﻿using NSoup.Nodes;
+using System;
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
@@ -168,6 +169,10 @@ namespace DataCrawl
             {
                  result=sr.ReadToEnd();
             }
+
+            Document document = NSoup.Parse.Parser.Parse(result, "");
+            Element element= document.GetElementById("hzdh");
+            var aa = element.Attr("value");
         }
 
         private void Form1_Load(object sender, EventArgs e)
