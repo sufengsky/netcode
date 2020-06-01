@@ -1,0 +1,151 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<edmx:Edmx Version="3.0" xmlns:edmx="http://schemas.microsoft.com/ado/2009/11/edmx">
+  <!-- EF Runtime content -->
+  <edmx:Runtime>
+    <!-- SSDL content -->
+    <edmx:StorageModels>
+      <Schema Namespace="testModel.Store" Provider="System.Data.SqlClient" ProviderManifestToken="2012" Alias="Self" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm/ssdl">
+        <EntityType Name="RecorderInfo">
+          <Key>
+            <PropertyRef Name="Id" />
+          </Key>
+          <Property Name="Id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="CurrentState" Type="nvarchar" MaxLength="2000" Nullable="false" />
+          <Property Name="Concluse" Type="nvarchar" MaxLength="2000" Nullable="false" />
+          <Property Name="RecorderUser" Type="nvarchar" MaxLength="2000" Nullable="false" />
+          <Property Name="PaiChaUser" Type="nvarchar" MaxLength="2000" Nullable="false" />
+          <Property Name="Year" Type="nvarchar" MaxLength="2000" Nullable="false" />
+          <Property Name="Area" Type="nvarchar" MaxLength="2000" Nullable="false" />
+          <Property Name="Viliage" Type="nvarchar" MaxLength="2000" Nullable="false" />
+          <Property Name="Adress" Type="nvarchar" MaxLength="2000" Nullable="false" />
+          <Property Name="HzUserName" Type="nvarchar" MaxLength="2000" Nullable="false" />
+          <Property Name="HzPhone" Type="nvarchar" MaxLength="2000" Nullable="false" />
+          <Property Name="IsProll" Type="nvarchar" MaxLength="2000" Nullable="false" />
+          <Property Name="Catelog" Type="nvarchar" MaxLength="2000" Nullable="false" />
+          <Property Name="EarthNature" Type="nvarchar" MaxLength="2000" Nullable="false" />
+          <Property Name="BuildYear" Type="nvarchar" MaxLength="2000" Nullable="false" />
+          <Property Name="BuildArea" Type="nvarchar" MaxLength="2000" Nullable="false" />
+          <Property Name="BasicNature" Type="nvarchar" MaxLength="2000" Nullable="false" />
+          <Property Name="OverFlow" Type="nvarchar" MaxLength="2000" Nullable="false" />
+          <Property Name="Desgin" Type="nvarchar" MaxLength="2000" Nullable="false" />
+          <Property Name="ReDesgin" Type="nvarchar" MaxLength="2000" Nullable="false" />
+          <Property Name="IsHaveScript" Type="nvarchar" MaxLength="2000" Nullable="false" />
+          <Property Name="ReDesignCotent" Type="nvarchar" MaxLength="2000" Nullable="false" />
+          <Property Name="NowUsage" Type="nvarchar" MaxLength="2000" Nullable="false" />
+          <Property Name="Structure" Type="nvarchar" MaxLength="2000" Nullable="false" />
+          <Property Name="DataSource" Type="nvarchar" MaxLength="2000" Nullable="false" />
+          <Property Name="AuditTime" Type="nvarchar" MaxLength="2000" Nullable="false" />
+          <Property Name="TechUserName" Type="nvarchar" MaxLength="2000" Nullable="false" />
+          <Property Name="TechUserPhone" Type="nvarchar" MaxLength="2000" Nullable="false" />
+          <Property Name="TechUserUnit" Type="nvarchar" MaxLength="2000" Nullable="false" />
+        </EntityType>
+        <EntityContainer Name="testModelStoreContainer">
+          <EntitySet Name="RecorderInfo" EntityType="Self.RecorderInfo" Schema="dbo" store:Type="Tables" />
+        </EntityContainer>
+      </Schema>
+    </edmx:StorageModels>
+    <!-- CSDL content -->
+    <edmx:ConceptualModels>
+      <Schema Namespace="testModel" Alias="Self" annotation:UseStrongSpatialTypes="false" xmlns:annotation="http://schemas.microsoft.com/ado/2009/02/edm/annotation" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm">
+        <EntityType Name="RecorderInfo">
+          <Key>
+            <PropertyRef Name="Id" />
+          </Key>
+          <Property Name="Id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="CurrentState" Type="String" MaxLength="2000" FixedLength="false" Unicode="true" Nullable="false" />
+          <Property Name="Concluse" Type="String" MaxLength="2000" FixedLength="false" Unicode="true" Nullable="false" />
+          <Property Name="RecorderUser" Type="String" MaxLength="2000" FixedLength="false" Unicode="true" Nullable="false" />
+          <Property Name="PaiChaUser" Type="String" MaxLength="2000" FixedLength="false" Unicode="true" Nullable="false" />
+          <Property Name="Year" Type="String" MaxLength="2000" FixedLength="false" Unicode="true" Nullable="false" />
+          <Property Name="Area" Type="String" MaxLength="2000" FixedLength="false" Unicode="true" Nullable="false" />
+          <Property Name="Viliage" Type="String" MaxLength="2000" FixedLength="false" Unicode="true" Nullable="false" />
+          <Property Name="Adress" Type="String" MaxLength="2000" FixedLength="false" Unicode="true" Nullable="false" />
+          <Property Name="HzUserName" Type="String" MaxLength="2000" FixedLength="false" Unicode="true" Nullable="false" />
+          <Property Name="HzPhone" Type="String" MaxLength="2000" FixedLength="false" Unicode="true" Nullable="false" />
+          <Property Name="IsProll" Type="String" MaxLength="2000" FixedLength="false" Unicode="true" Nullable="false" />
+          <Property Name="Catelog" Type="String" MaxLength="2000" FixedLength="false" Unicode="true" Nullable="false" />
+          <Property Name="EarthNature" Type="String" MaxLength="2000" FixedLength="false" Unicode="true" Nullable="false" />
+          <Property Name="BuildYear" Type="String" MaxLength="2000" FixedLength="false" Unicode="true" Nullable="false" />
+          <Property Name="BuildArea" Type="String" MaxLength="2000" FixedLength="false" Unicode="true" Nullable="false" />
+          <Property Name="BasicNature" Type="String" MaxLength="2000" FixedLength="false" Unicode="true" Nullable="false" />
+          <Property Name="OverFlow" Type="String" MaxLength="2000" FixedLength="false" Unicode="true" Nullable="false" />
+          <Property Name="Desgin" Type="String" MaxLength="2000" FixedLength="false" Unicode="true" Nullable="false" />
+          <Property Name="ReDesgin" Type="String" MaxLength="2000" FixedLength="false" Unicode="true" Nullable="false" />
+          <Property Name="IsHaveScript" Type="String" MaxLength="2000" FixedLength="false" Unicode="true" Nullable="false" />
+          <Property Name="ReDesignCotent" Type="String" MaxLength="2000" FixedLength="false" Unicode="true" Nullable="false" />
+          <Property Name="NowUsage" Type="String" MaxLength="2000" FixedLength="false" Unicode="true" Nullable="false" />
+          <Property Name="Structure" Type="String" MaxLength="2000" FixedLength="false" Unicode="true" Nullable="false" />
+          <Property Name="DataSource" Type="String" MaxLength="2000" FixedLength="false" Unicode="true" Nullable="false" />
+          <Property Name="AuditTime" Type="String" MaxLength="2000" FixedLength="false" Unicode="true" Nullable="false" />
+          <Property Name="TechUserName" Type="String" MaxLength="2000" FixedLength="false" Unicode="true" Nullable="false" />
+          <Property Name="TechUserPhone" Type="String" MaxLength="2000" FixedLength="false" Unicode="true" Nullable="false" />
+          <Property Name="TechUserUnit" Type="String" MaxLength="2000" FixedLength="false" Unicode="true" Nullable="false" />
+        </EntityType>
+        <EntityContainer Name="testEntities" annotation:LazyLoadingEnabled="true">
+          <EntitySet Name="RecorderInfo" EntityType="Self.RecorderInfo" />
+        </EntityContainer>
+      </Schema>
+    </edmx:ConceptualModels>
+    <!-- C-S mapping content -->
+    <edmx:Mappings>
+      <Mapping Space="C-S" xmlns="http://schemas.microsoft.com/ado/2009/11/mapping/cs">
+        <EntityContainerMapping StorageEntityContainer="testModelStoreContainer" CdmEntityContainer="testEntities">
+          <EntitySetMapping Name="RecorderInfo">
+            <EntityTypeMapping TypeName="testModel.RecorderInfo">
+              <MappingFragment StoreEntitySet="RecorderInfo">
+                <ScalarProperty Name="Id" ColumnName="Id" />
+                <ScalarProperty Name="CurrentState" ColumnName="CurrentState" />
+                <ScalarProperty Name="Concluse" ColumnName="Concluse" />
+                <ScalarProperty Name="RecorderUser" ColumnName="RecorderUser" />
+                <ScalarProperty Name="PaiChaUser" ColumnName="PaiChaUser" />
+                <ScalarProperty Name="Year" ColumnName="Year" />
+                <ScalarProperty Name="Area" ColumnName="Area" />
+                <ScalarProperty Name="Viliage" ColumnName="Viliage" />
+                <ScalarProperty Name="Adress" ColumnName="Adress" />
+                <ScalarProperty Name="HzUserName" ColumnName="HzUserName" />
+                <ScalarProperty Name="HzPhone" ColumnName="HzPhone" />
+                <ScalarProperty Name="IsProll" ColumnName="IsProll" />
+                <ScalarProperty Name="Catelog" ColumnName="Catelog" />
+                <ScalarProperty Name="EarthNature" ColumnName="EarthNature" />
+                <ScalarProperty Name="BuildYear" ColumnName="BuildYear" />
+                <ScalarProperty Name="BuildArea" ColumnName="BuildArea" />
+                <ScalarProperty Name="BasicNature" ColumnName="BasicNature" />
+                <ScalarProperty Name="OverFlow" ColumnName="OverFlow" />
+                <ScalarProperty Name="Desgin" ColumnName="Desgin" />
+                <ScalarProperty Name="ReDesgin" ColumnName="ReDesgin" />
+                <ScalarProperty Name="IsHaveScript" ColumnName="IsHaveScript" />
+                <ScalarProperty Name="ReDesignCotent" ColumnName="ReDesignCotent" />
+                <ScalarProperty Name="NowUsage" ColumnName="NowUsage" />
+                <ScalarProperty Name="Structure" ColumnName="Structure" />
+                <ScalarProperty Name="DataSource" ColumnName="DataSource" />
+                <ScalarProperty Name="AuditTime" ColumnName="AuditTime" />
+                <ScalarProperty Name="TechUserName" ColumnName="TechUserName" />
+                <ScalarProperty Name="TechUserPhone" ColumnName="TechUserPhone" />
+                <ScalarProperty Name="TechUserUnit" ColumnName="TechUserUnit" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+        </EntityContainerMapping>
+      </Mapping>
+    </edmx:Mappings>
+  </edmx:Runtime>
+  <!-- EF Designer content (DO NOT EDIT MANUALLY BELOW HERE) -->
+  <Designer xmlns="http://schemas.microsoft.com/ado/2009/11/edmx">
+    <Connection>
+      <DesignerInfoPropertySet>
+        <DesignerProperty Name="MetadataArtifactProcessing" Value="EmbedInOutputAssembly" />
+      </DesignerInfoPropertySet>
+    </Connection>
+    <Options>
+      <DesignerInfoPropertySet>
+        <DesignerProperty Name="ValidateOnBuild" Value="true" />
+        <DesignerProperty Name="EnablePluralization" Value="false" />
+        <DesignerProperty Name="IncludeForeignKeysInModel" Value="true" />
+        <DesignerProperty Name="UseLegacyProvider" Value="false" />
+        <DesignerProperty Name="CodeGenerationStrategy" Value="None" />
+      </DesignerInfoPropertySet>
+    </Options>
+    <!-- Diagram content (shape and connector positions) -->
+    <Diagrams></Diagrams>
+  </Designer>
+</edmx:Edmx>
